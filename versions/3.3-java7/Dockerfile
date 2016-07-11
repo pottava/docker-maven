@@ -1,5 +1,5 @@
 # Maven v3.3
-# docker run --rm pottava/maven:3.3-java7 mvn -v
+# docker run --rm pottava/maven:3.3-java7
 
 FROM pottava/java:7
 
@@ -15,3 +15,5 @@ RUN set -ex \
       && ln -s /usr/lib/maven/bin/mvn /usr/bin/mvn \
       && rm -rf /tmp/* \
       && apk del --purge build-dependencies
+
+CMD ["/usr/bin/mvn", "-v"]
